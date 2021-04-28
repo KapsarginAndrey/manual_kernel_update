@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Install elrepo
-yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+sudo rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 # Install new kernel
-yum --enablerepo elrepo-kernel install kernel-ml -y
+sudo yum --enablerepo elrepo-kernel install kernel-ml -y
 # Remove older kernels (Only for demo! Not Production!)
 rm -f /boot/*3.10*
 # Update GRUB
