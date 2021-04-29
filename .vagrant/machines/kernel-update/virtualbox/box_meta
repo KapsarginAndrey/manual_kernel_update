@@ -1,1 +1,1 @@
-{"name":"centos-7-5","version":"0","provider":"virtualbox","directory":"boxes/centos-7-5/0/virtualbox"}
+{"name":"kapsarginae/centos-7-5","version":"6.0","provider":"virtualbox","directory":"boxes/kapsarginae-VAGRANTSLASH-centos-7-5/6.0/virtualbox"}
