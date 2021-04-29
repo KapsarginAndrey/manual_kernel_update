@@ -34,7 +34,9 @@
         ["modifyvm", "{{.Name}}", "--cpus", "2"]
       ],
       "vm_name": "packer-centos-vm",
-      "headless": "true"
+      "headless": "true",
+      "guest_additions_mode": "attach",
+      "guest_additions_path": "VBoxGuestAdditions.iso"
     }
   ],
   "post-processors": [

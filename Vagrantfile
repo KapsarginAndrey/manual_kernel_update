@@ -2,9 +2,10 @@
 MACHINES = {
   # VM name "kernel update"
   :"kernel-update" => {
-              # VM box
-              :box_name => "centos/7",
-              # VM CPU count
+              # VM boxp
+              #:box_name => "kapsarginae/centos-7-5",
+              :box_name => "centos-7-5",
+	      # VM CPU count
               :cpus => 2,
               # VM RAM size (Mb)
               :memory => 1024,
@@ -16,6 +17,7 @@ MACHINES = {
 }
 
 Vagrant.configure("2") do |config|
+  config.ssh.forward_agent = true
   MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -23,6 +25,8 @@ Vagrant.configure("2") do |config|
     config.vm.define boxname do |box|
       # Set VM base box and hostname
       box.vm.box = boxconfig[:box_name]
+      #box.vm.box = "kapsarginae/centos-7-5"
+      #box.vm.box_version = "3.0"
       box.vm.host_name = boxname.to_s
       # Additional network config if present
       if boxconfig.key?(:net)
